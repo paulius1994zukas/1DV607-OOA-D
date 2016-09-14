@@ -1,0 +1,19 @@
+Comments on the model:
+-The Secretary doesnt manage the actual boats. He assigns berths to boats or vice versa and maintains the records of that.
+-Calendar could be considered a report/derived attribute of all the individual events. see Larman [1, Chap 9 section 16]
+-Not sure if Authenticate should be included in the domain model. I assume you mean it as software authenticate with password and username. But then I would argue that it should be left out because it is not of the "real world". If its not then perhaps that should be clarified.
+-Parts of it are unclear due to missing UML notation, see below.
+
+UML notation:
+-Map is missing multiplicity indicators on all associations, see Larman [1, Chap 9 section 14] F.ex. how many secretaries manage how many calendars?
+-Map is missing association words for some associations, see Larman [1, Chap 9 section 14]
+	How is a member and berth related? 
+	How is boats and berths related? 
+	How is Authenticate related to member and secretary?
+-Map is missing attributes (doesnt mean they are needed). see Larman [1, Chap 9 section 16]
+
+General comments:
+Has good names for classes and has the most important concepts. I think it needs to be more detailed and go "deeper" into the domain to get a good understanding of the domain and to be useful. I.e. add more classes and UML notation.
+
+Reference section:
+1. Larman C., Applying UML and Patterns 3rd Ed, 2005, ISBN: 0131489062

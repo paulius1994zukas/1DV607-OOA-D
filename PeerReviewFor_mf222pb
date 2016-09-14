@@ -1,0 +1,13 @@
+Comments on the model:
+-From the model it seems the secretary is managing the actual member. I'd say he's managing the records of a member somewhere in their paperwork. The same could also be true for Secretary's association with boat and berth.
+-Parts of it are unclear due to missing UML notation, see below.
+
+UML notation:
+-Map is missing multiplicity indicators on most associations, see Larman [1, Chap 9 section 14] F.ex. how many secretaries assign how many berth?
+-Map is missing attributes (doesnt mean they are needed but could be). see Larman [1, Chap 9 section 16]
+
+General comments:
+Has good names for classes and has the most important classes. I think it needs to be more detailed and go "deeper" into the domain to get a good understanding of the domain and to be useful. I.e. add more classes and UML notation.
+
+Reference section:
+1. Larman C., Applying UML and Patterns 3rd Ed, 2005, ISBN: 0131489062
