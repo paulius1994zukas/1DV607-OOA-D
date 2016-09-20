@@ -1,0 +1,5 @@
+* Removed Club treasurer and Berth allocation map (a club must have some kind of map over which berth has which number etc) because they are not in scope of grade 2.
+* Removed the UML notation of classes that are derived (Bert Registry, Member registry, Calendar). I was both unsure of if this notation was "legal" and if useful. After consideration I realised that the information of which "records" or "events" exists is information not derived.
+* Changed association from "member goes to Event"" to member views calendar" as this information is more relevant to the scope.
+* Removed Club class because it makes the map seem unnecessary complex without giving much value. Everything it shows you should be fairly obvious anyway. If I would have kept it I would have changed "club owns berth" to "club allows docking at berth".
+* Removed member record class as this could be simplified by having the information in the member class and still recorded in the registry.
