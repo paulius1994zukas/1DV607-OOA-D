@@ -8,44 +8,50 @@ namespace BoatClubRegistry
     public class Member
     {
         private string _name;
-        private int _personId;
+        private string _personIdNumber;
         private int _memberId;
         private List<BoatClubRegistry.Boat> _boats;
 
+        public Member(string name, string personIdNumber, int memberId)
+        {
+            Name = name;
+            PersonIdNumber = personIdNumber;
+            _memberId = memberId;
+        }
+
         public string Name
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
+            get { return _name; }
             set
             {
+                if (value.Length < 1)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(Name), "Must be 1 char or longer");
+                }
+
+                _name = value;
             }
         }
 
-        public int PersonId
+        public string PersonIdNumber
         {
             get
-            {
-                throw new System.NotImplementedException();
-            }
+            { return _personIdNumber; }
 
             set
             {
+                if (value.Length != 10) //TODO: use regexp to check format. http://stackoverflow.com/questions/32624800/swedish-ssn-regular-expression-reject-users-under-a-specific-age
+                {
+                    throw new ArgumentOutOfRangeException(nameof(Name), "Must be 10 digits");
+                }
+
+                _personIdNumber = value;
             }
         }
 
         public int MemberId
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get { return _memberId; }
         }
 
         public void addBoat()
