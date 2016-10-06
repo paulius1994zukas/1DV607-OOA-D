@@ -73,5 +73,10 @@ namespace BoatClubRegistry
         {
             throw new System.NotImplementedException();
         }
+
+        public void getNumberOfBoats()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

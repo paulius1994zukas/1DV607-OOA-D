@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+
 using System.Linq;
 using System.Text;
 
@@ -9,6 +9,11 @@ namespace BoatClubRegistry
     {
         private int _length;
         private BoatType _type;
+
+        public Boat()
+        {
+            throw new System.NotImplementedException();
+        }
 
         public int Length
         {

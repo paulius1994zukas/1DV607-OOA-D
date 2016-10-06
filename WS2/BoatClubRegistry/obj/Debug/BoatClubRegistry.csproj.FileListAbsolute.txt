@@ -1,1 +1,6 @@
 C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\bin\Debug\BoatClubRegistry.exe.config
+C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\obj\Debug\BoatClubRegistry.csprojResolveAssemblyReference.cache
+C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\bin\Debug\BoatClubRegistry.exe
+C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\bin\Debug\BoatClubRegistry.pdb
+C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\obj\Debug\BoatClubRegistry.exe
+C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\obj\Debug\BoatClubRegistry.pdb

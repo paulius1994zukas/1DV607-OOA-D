@@ -9,6 +9,11 @@ namespace BoatClubRegistry
     {
         private List<Member> _members;
 
+        public MemberRegistry()
+        {
+            _members = new List<Member>();
+        }
+
         public void getMembers()
         {
             throw new System.NotImplementedException();

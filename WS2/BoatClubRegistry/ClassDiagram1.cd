@@ -13,12 +13,9 @@
   <Class Name="BoatClubRegistry.Member">
     <Position X="9.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAQAEAZAgAQQAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>CAAAIAAAAAAAAQAIARAgAQQAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Member.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Field Name="_boats" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="BoatClubRegistry.MemberRegistry">
     <Position X="12" Y="1.5" Width="1.5" />
@@ -29,13 +26,6 @@
     <ShowAsCollectionAssociation>
       <Field Name="_members" />
     </ShowAsCollectionAssociation>
-  </Class>
-  <Class Name="BoatClubRegistry.Console">
-    <Position X="15.25" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAIAEAAAAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAA=</HashCode>
-      <FileName>Console.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Enum Name="BoatClubRegistry.BoatType">
     <Position X="2.75" Y="1.5" Width="1.5" />
