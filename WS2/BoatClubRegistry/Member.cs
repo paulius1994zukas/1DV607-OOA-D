@@ -17,6 +17,7 @@ namespace BoatClubRegistry
             Name = name;
             PersonIdNumber = personIdNumber;
             _memberId = memberId;
+            _boats = new List<Boat>();
         }
 
         public string Name
@@ -54,29 +55,30 @@ namespace BoatClubRegistry
             get { return _memberId; }
         }
 
-        public void addBoat()
+        public void addBoat(BoatType type, int length)
         {
-            throw new System.NotImplementedException();
+            _boats.Add(new Boat(type, length));
         }
 
-        public void removeBoat()
+        public void removeBoat(int index)
         {
-            throw new System.NotImplementedException();
+            _boats.RemoveAt(index);
         }
 
-        public void editBoat()
+        public void editBoat(int index, BoatType newType, int newLength)
         {
-            throw new System.NotImplementedException();
+            _boats[index].BoatType = newType;
+            _boats[index].Length = newLength;
         }
 
-        public void getBoats()
+        public IReadOnlyList<Boat> getBoats()
         {
-            throw new System.NotImplementedException();
+            return _boats.AsReadOnly();
         }
 
-        public void getNumberOfBoats()
+        public int getNumberOfBoats()
         {
-            throw new System.NotImplementedException();
+            return _boats.Count;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -15,7 +16,7 @@ namespace BoatClubRegistry
         public void start()
         {
             Console.WriteLine("Welcome to your boat club registry");
-            showCompactList();
+            showVerboseList(_model.getMembers());
             getInput();
         }
 
@@ -24,19 +25,38 @@ namespace BoatClubRegistry
             Console.ReadKey();
         }
 
-        private void showCompactList()
+        private void showCompactList(IReadOnlyList<Member> memberList)
         {
-            Console.Write("Welcome to your boat club registry");
+            Console.WriteLine("\nCompact list:");
+
+            foreach (Member member in memberList)
+            {
+                string output = $"Id: {member.MemberId, -10} Name: {member.Name, -20} #Boats: {member.getNumberOfBoats()}";
+                Console.WriteLine(output);
+            }
         }
 
-        private void showVerboseList()
+        private void showVerboseList(IReadOnlyList<Member> memberList)
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("\nVerbose list:");
+            foreach(Member member in memberList)
+            {
+                Console.WriteLine();
+                showMember(member);
+            }
         }
 
-        private void showMember()
+        private void showMember(Member member)
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine($"Id      : {member.MemberId}");
+            Console.WriteLine($"Name    : {member.Name}");
+            Console.WriteLine($"PersonId: {member.PersonIdNumber}");
+            Console.WriteLine($"Boats   : {member.getNumberOfBoats()}");
+
+            foreach (Boat boat in member.getBoats())
+            {
+                Console.WriteLine($"   Type: {boat.BoatType,-12} Length: {boat.Length}");
+            }
         }
     }
 }

@@ -10,9 +10,10 @@ namespace BoatClubRegistry
         private int _length;
         private BoatType _type;
 
-        public Boat()
+        public Boat(BoatType type, int length)
         {
-            throw new System.NotImplementedException();
+            _length = length;
+            _type = type;
         }
 
         public int Length
@@ -24,7 +25,7 @@ namespace BoatClubRegistry
 
             set
             {
-                if(value <= 0)
+                if(value < 0)
                 {
                     throw new System.ArgumentOutOfRangeException(nameof(Length), "Must be more than 0");
                 }

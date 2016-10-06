@@ -8,35 +8,42 @@ namespace BoatClubRegistry
     public class MemberRegistry
     {
         private List<Member> _members;
+        private int _lastMemberId;
 
         public MemberRegistry()
         {
             _members = new List<Member>();
+            _lastMemberId = 0;
         }
 
-        public void getMembers()
+        public Member addMember(string name, string personIdNumber)
         {
-            throw new System.NotImplementedException();
+            _lastMemberId += 1;
+            Member newMember = new Member(name, personIdNumber, _lastMemberId);
+            _members.Add(newMember);
+            return newMember;
         }
 
-        public void getMember()
+        public IReadOnlyList<Member> getMembers()
         {
-            throw new System.NotImplementedException();
+            return _members.AsReadOnly();
         }
 
-        public void removeMember()
+        public Member getMember(int index)
         {
-            throw new System.NotImplementedException();
+            return _members[index];
         }
 
-        public void editMember()
+        public void removeMember(int index)
         {
-            throw new System.NotImplementedException();
+            _members.RemoveAt(index);
         }
 
-        public void addMember()
+        public void editMember(int index, string newName, string newPersonIdNumber)
         {
-            throw new System.NotImplementedException();
+            Member toEdit = _members[index];
+            toEdit.Name = newName;
+            toEdit.PersonIdNumber = newPersonIdNumber;
         }
     }
 }
