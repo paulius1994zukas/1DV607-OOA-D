@@ -1,0 +1,7 @@
+C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\bin\Release\BoatClubRegistry.exe.config
+C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\bin\Release\BoatClubRegistry.exe
+C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\bin\Release\BoatClubRegistry.pdb
+C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\bin\Release\Newtonsoft.Json.dll
+C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\obj\Release\BoatClubRegistry.exe
+C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\obj\Release\BoatClubRegistry.pdb
+C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\obj\Release\BoatClubRegistry.csprojResolveAssemblyReference.cache

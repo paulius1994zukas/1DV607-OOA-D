@@ -50,6 +50,7 @@ namespace BoatClubRegistry
         public void saveToFile()
         {
             string path = @"C:\Temp\data.json";
+            
             using (StreamWriter file = File.CreateText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
