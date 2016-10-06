@@ -11,4 +11,3 @@ C:\Users\Nicklas\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClub
 C:\Users\Nicklas\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\bin\Debug\BoatClubRegistry.pdb
 C:\Users\Nicklas\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\obj\Debug\BoatClubRegistry.csprojResolveAssemblyReference.cache
 C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\bin\Debug\Newtonsoft.Json.dll
-C:\Users\slim2\Documents\Visual Studio 2015\Projects\1DV607-OOA-D\WS2\BoatClubRegistry\bin\Debug\Newtonsoft.Json.xml

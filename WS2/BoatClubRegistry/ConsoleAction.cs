@@ -9,6 +9,7 @@ namespace BoatClubRegistry
     {
         Quit,
         SaveToFile,
+        LoadFromFile,
         ViewVerboseList,
         ViewCompactList,
         ViewMember,

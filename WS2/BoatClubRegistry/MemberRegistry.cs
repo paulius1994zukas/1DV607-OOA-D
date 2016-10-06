@@ -16,12 +16,6 @@ namespace BoatClubRegistry
         {
             _members = new List<Member>();
             _lastMemberId = 0;
-            
-            using (StreamReader r = new StreamReader(@"C:\Temp\data.json"))
-            {
-                string json = r.ReadToEnd();
-                _members = JsonConvert.DeserializeObject<List<Member>>(json);
-            }
         }
 
     public Member addMember(string name, string personIdNumber)
@@ -47,15 +41,24 @@ namespace BoatClubRegistry
             _members.Remove(m);
         }
 
-        public void saveToFile()
+        public void saveToFile(string path)
         {
-            string path = @"C:\Temp\data.json";
-            
             using (StreamWriter file = File.CreateText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, _members);
             }
+        }
+
+        public void loadFromFile(string path)
+        {
+            using (StreamReader r = new StreamReader(path))
+            {
+                string json = r.ReadToEnd();
+                _members = JsonConvert.DeserializeObject<List<Member>>(json);
+            }
+
+            _lastMemberId = _members[_members.Count - 1].MemberId;
         }
     }
 }

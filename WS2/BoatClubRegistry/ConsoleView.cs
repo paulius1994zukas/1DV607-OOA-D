@@ -23,7 +23,11 @@ namespace BoatClubRegistry
                 switch (actionToPerform)
                 {
                     case ConsoleAction.SaveToFile:
-                        _model.saveToFile();
+                        _model.saveToFile(getStringInput("Type path to file"));
+                        actionToPerform = listMenu();
+                        break;
+                    case ConsoleAction.LoadFromFile:
+                        _model.loadFromFile(getStringInput("Type path to file"));
                         actionToPerform = listMenu();
                         break;
                     case ConsoleAction.ViewCompactList:
@@ -70,7 +74,7 @@ namespace BoatClubRegistry
 
         private ConsoleAction listMenu()
         {
-            Console.WriteLine("\nOptions: show [v]erbose list | show [c]ompact list | [a]dd member | view [m]ember | [s]ave to file | [q]uit");
+            Console.WriteLine("\nOptions: show [v]erbose list | show [c]ompact list | [a]dd member | view [m]ember | [s]ave | [l]oad | [q]uit");
             var input = Console.ReadKey();
             ConsoleAction actionToPerform;
             switch (input.Key)
@@ -89,6 +93,9 @@ namespace BoatClubRegistry
                     break;
                 case ConsoleKey.S:
                     actionToPerform = ConsoleAction.SaveToFile;
+                    break;
+                case ConsoleKey.L:
+                    actionToPerform = ConsoleAction.LoadFromFile;
                     break;
                 case ConsoleKey.Q:
                     actionToPerform = ConsoleAction.Quit;
@@ -149,7 +156,7 @@ namespace BoatClubRegistry
                 if (!firstTry) Console.WriteLine("Not a number, please try again");
                 firstTry = false;
                 input = Console.ReadLine();
-            } while (Int32.TryParse(input, out output));
+            } while (!Int32.TryParse(input.Trim(), out output));
 
             return output;
         }
