@@ -53,6 +53,13 @@ namespace BoatClubRegistry
         public int MemberId
         {
             get { return _memberId; }
+            set { _memberId = value; }
+        }
+
+        public List<Boat> Boats
+        {
+            get { return _boats; }
+            set { _boats = value; }
         }
 
         public void addBoat(BoatType type, int length)
@@ -69,16 +76,6 @@ namespace BoatClubRegistry
         {
             _boats[index].BoatType = newType;
             _boats[index].Length = newLength;
-        }
-
-        public IReadOnlyList<Boat> getBoats()
-        {
-            return _boats.AsReadOnly();
-        }
-
-        public int getNumberOfBoats()
-        {
-            return _boats.Count;
         }
     }
 }
