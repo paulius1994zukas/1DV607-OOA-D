@@ -41,6 +41,11 @@ namespace BoatClubRegistry
             _members.Remove(m);
         }
 
+        public int getIndexOfMember(Member m)
+        {
+            return _members.IndexOf(m);
+        }
+
         public void saveToFile(string path)
         {
             using (StreamWriter file = File.CreateText(path))

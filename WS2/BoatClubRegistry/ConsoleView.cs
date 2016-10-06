@@ -51,8 +51,8 @@ namespace BoatClubRegistry
 
         public ConsoleAction memberMenu()
         {
-            Console.WriteLine("\nOptions: show [v]erbose list | show [c]ompact list | [r]emove member | [e]dit member | [s]ave to file | [q]uit");
-            Console.WriteLine("[a]dd boat | edit [b]oat | [r]emove boat");
+            Console.WriteLine("\nOptions:\n show [v]erbose list | show [c]ompact list | [r]emove member | [e]dit member | [s]ave to file | [q]uit");
+            Console.WriteLine("[a]dd boat | edit [b]oat | remove b[o]at");
             var input = Console.ReadKey();
             ConsoleAction actionToPerform;
             switch (input.Key)
@@ -69,6 +69,15 @@ namespace BoatClubRegistry
                 case ConsoleKey.E:
                     actionToPerform = ConsoleAction.EditMember;
                     break;
+                case ConsoleKey.A:
+                    actionToPerform = ConsoleAction.AddBoat;
+                    break;
+                case ConsoleKey.B:
+                    actionToPerform = ConsoleAction.EditBoat;
+                    break;
+                case ConsoleKey.O:
+                    actionToPerform = ConsoleAction.RemoveBoat;
+                    break;
                 case ConsoleKey.S:
                     actionToPerform = ConsoleAction.SaveToFile;
                     break;
@@ -82,6 +91,26 @@ namespace BoatClubRegistry
 
             }
             return actionToPerform;
+        }
+
+        public int getIdOfMember()
+        {
+            return getNumberInput("Type id (#) of member");
+        }
+
+        public string getPathToFile()
+        {
+            return getStringInput("Type path to file");
+        }
+
+        public string getName()
+        {
+            return getStringInput("New name");
+        }
+
+        public string getPersonIdNumber()
+        {
+            return getStringInput("New person id number");
         }
 
         public int getNumberInput(string inputHint)
