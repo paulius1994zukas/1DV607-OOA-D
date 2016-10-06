@@ -17,12 +17,37 @@ namespace BoatClubRegistry
         {
             Console.WriteLine("Welcome to your boat club registry");
             showVerboseList(_model.getMembers());
-            getInput();
+            getKeyInput();
         }
 
-        private void getInput()
+        private void getKeyInput()
         {
-            Console.ReadKey();
+            Console.WriteLine("\nOptions: show [v]erbose list | show [c]ompact list | [a]dd member | view [m]ember | [s]ave to file ");
+            var input = Console.ReadKey();
+
+            switch (input.Key)
+            {
+                case ConsoleKey.V:
+                    showVerboseList(_model.getMembers());
+                    break;
+                case ConsoleKey.C:
+                    showCompactList(_model.getMembers());
+                    break;
+                case ConsoleKey.A:
+                    Console.WriteLine("\nType name of new member:");
+                    string  name = Console.ReadLine();
+                    Console.WriteLine("\nType person id number of new member:");
+                    string pid = Console.ReadLine();
+                    Console.WriteLine(name + pid);
+                    break;
+                case ConsoleKey.M:
+                    Console.WriteLine("\nType member id to view:");
+                    string id = Console.ReadLine();
+                    showMember((int)id);
+                    break;
+                case ConsoleKey.S:
+                    break;
+            }
         }
 
         private void showCompactList(IReadOnlyList<Member> memberList)
