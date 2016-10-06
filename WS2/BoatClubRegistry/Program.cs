@@ -18,8 +18,9 @@ namespace BoatClubRegistry
             model.addMember("Test2", "8604020712");
             model.addMember("Test3", "8604020712");
             model.addMember("Test4", "8604020712");
-            ConsoleView view = new ConsoleView(model);
-            view.start();
+            ConsoleView view = new ConsoleView();
+            Controller c = new Controller(model, view);
+            c.start();
         }
     }
 }

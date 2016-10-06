@@ -33,7 +33,7 @@ namespace BoatClubRegistry
 
         public Member getMember(int i)
         {
-            return _members.Find(x => x.MemberId.Equals(i));
+            return _members[i];
         }
 
         public void removeMember(Member m)

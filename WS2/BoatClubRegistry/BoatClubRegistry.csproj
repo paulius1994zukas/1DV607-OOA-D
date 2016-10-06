@@ -51,6 +51,7 @@
     <Compile Include="BoatType.cs" />
     <Compile Include="ConsoleAction.cs" />
     <Compile Include="ConsoleView.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="Member.cs" />
     <Compile Include="MemberRegistry.cs" />
     <Compile Include="Program.cs" />
