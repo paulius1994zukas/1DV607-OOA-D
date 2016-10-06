@@ -16,11 +16,11 @@ namespace BoatClubRegistry
         public void start()
         {
             Console.WriteLine("Welcome to your boat club registry");
-            showVerboseList(_model.getMembers());
-            getKeyInput();
+            showCompactList(_model.getMembers());
+            listMenu();
         }
 
-        private void getKeyInput()
+        private void listMenu()
         {
             Console.WriteLine("\nOptions: show [v]erbose list | show [c]ompact list | [a]dd member | view [m]ember | [s]ave to file ");
             var input = Console.ReadKey();
@@ -34,33 +34,46 @@ namespace BoatClubRegistry
                     showCompactList(_model.getMembers());
                     break;
                 case ConsoleKey.A:
-                    Console.WriteLine("\nType name of new member:");
-                    string  name = Console.ReadLine();
-                    Console.WriteLine("\nType person id number of new member:");
-                    string pid = Console.ReadLine();
-                    Console.WriteLine(name + pid);
+                    string name = getStringInput("Type name of new member");
+                    string pid = getStringInput("Type person id number of new member");
+                    Member newMember = _model.addMember(name, pid);
+                    showMember(newMember);
                     break;
                 case ConsoleKey.M:
-                    Console.WriteLine("\nType member id to view:");
-                    string idString = Console.ReadLine();
-                    int id;
-                    if (Int32.TryParse(idString, out id))
-                    {
-                        showMember(_model.getMember(id));
-                    } else
-                    {
-                        Console.WriteLine("Parsing of your input failed, please try again.");
-                    }
+                    int id = getNumberInput("Who do you want to view? Type member id.");
+                    showMember(_model.getMember(id));
                     break;
                 case ConsoleKey.S:
                     break;
             }
         }
 
+        private int getNumberInput(string inputHint)
+        {
+            Console.WriteLine($"\n{inputHint}:");
+            int output;
+            string input;
+            bool firstTry = true;
+
+            do
+            {
+                if (!firstTry) Console.WriteLine("Not a number, please try again");
+                firstTry = false;
+                input = Console.ReadLine();
+            } while (Int32.TryParse(input, out output));
+
+            return output;
+        }
+
+        private string getStringInput(string inputHint)
+        {
+            Console.WriteLine($"\n{inputHint}:");
+            return Console.ReadLine();
+        }
+
         private void showCompactList(IReadOnlyList<Member> memberList)
         {
             Console.WriteLine("\nCompact list:");
-
             foreach (Member member in memberList)
             {
                 string output = $"Id: {member.MemberId, -10} Name: {member.Name, -20} #Boats: {member.getNumberOfBoats()}";
