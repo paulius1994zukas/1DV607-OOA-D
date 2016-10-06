@@ -42,8 +42,15 @@ namespace BoatClubRegistry
                     break;
                 case ConsoleKey.M:
                     Console.WriteLine("\nType member id to view:");
-                    string id = Console.ReadLine();
-                    showMember((int)id);
+                    string idString = Console.ReadLine();
+                    int id;
+                    if (Int32.TryParse(idString, out id))
+                    {
+                        showMember(_model.getMember(id));
+                    } else
+                    {
+                        Console.WriteLine("Parsing of your input failed, please try again.");
+                    }
                     break;
                 case ConsoleKey.S:
                     break;
