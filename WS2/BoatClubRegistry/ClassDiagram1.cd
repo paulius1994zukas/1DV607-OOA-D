@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="BoatClubRegistry.Boat">
-    <Position X="5" Y="7.5" Width="1.5" />
+    <Position X="4.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAABAAAAAAAAABAAAAAAEAAA=</HashCode>
       <FileName>Boat.cs</FileName>
@@ -11,14 +11,17 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="BoatClubRegistry.Member">
-    <Position X="1.75" Y="1.5" Width="1.75" />
+    <Position X="7.75" Y="1.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>CAAAIAAAAAAAAQAIABAgAQQAAQQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Member.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_boats" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="BoatClubRegistry.MemberRegistry">
-    <Position X="4.75" Y="2.5" Width="1.75" />
+    <Position X="10.75" Y="2.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAEABAAAABAAAgAAAAAAAABACQAAAgAAA=</HashCode>
       <FileName>MemberRegistry.cs</FileName>
@@ -28,32 +31,32 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="BoatClubRegistry.Controller">
-    <Position X="8.25" Y="3.25" Width="2" />
+    <Position X="14" Y="3" Width="2" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAAAAAgAAAAAACAAAAAAAAQAIAAAAQACAA=</HashCode>
+      <HashCode>CAAAAAAAAAAAAAAgAAAAAACAAAwAAAAAAIAAAAAACAA=</HashCode>
       <FileName>Controller.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="_cView" />
-      <Field Name="_mRegistry" />
+      <Field Name="_consoleView" />
+      <Field Name="_memberRegistry" />
     </ShowAsAssociation>
   </Class>
   <Class Name="BoatClubRegistry.ConsoleView" Collapsed="true">
-    <Position X="12" Y="3.5" Width="1.5" />
+    <Position X="17.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAACKEAAABAQMAQAAAAAAAAAAAAAAQEEABAEAAAAAAA=</HashCode>
       <FileName>ConsoleView.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="BoatClubRegistry.BoatType">
-    <Position X="8" Y="8" Width="1.5" />
+    <Position X="1.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAgAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>BoatType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="BoatClubRegistry.ConsoleAction" Collapsed="true">
-    <Position X="14.5" Y="1.5" Width="1.5" />
+    <Position X="16" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEQACAAgAAAAgAAAAAEAAAAAAQAgAAAAAAAgAAAAEQA=</HashCode>
       <FileName>ConsoleAction.cs</FileName>
