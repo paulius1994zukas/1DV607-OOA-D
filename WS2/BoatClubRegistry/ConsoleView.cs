@@ -12,7 +12,7 @@ namespace BoatClubRegistry
             Console.WriteLine("Welcome to your boat club registry");
         }
 
-        public ConsoleAction listMenu()
+        public ConsoleAction getNextActionFromListView()
         {
             Console.WriteLine("\nOptions: show [v]erbose list | show [c]ompact list | [a]dd member | view [m]ember | [s]ave | [l]oad | [q]uit");
             var input = Console.ReadKey();
@@ -42,14 +42,14 @@ namespace BoatClubRegistry
                     break;
                 default:
                     Console.WriteLine("Not a valid action. Type the characater in the bracket corresponding to the action.");
-                    actionToPerform = listMenu();
+                    actionToPerform = getNextActionFromListView();
                     break;
 
             }
             return actionToPerform;
         }
 
-        public ConsoleAction memberMenu()
+        public ConsoleAction getNextActionFromMemberView()
         {
             Console.WriteLine("\nOptions:\n show [v]erbose list | show [c]ompact list | [r]emove member | [e]dit member | [s]ave to file | [q]uit");
             Console.WriteLine("[a]dd boat | edit [b]oat | remove b[o]at");
@@ -86,14 +86,14 @@ namespace BoatClubRegistry
                     break;
                 default:
                     Console.WriteLine("\nNot a valid action. Type the characater in the bracket corresponding to the action.");
-                    actionToPerform = memberMenu();
+                    actionToPerform = getNextActionFromMemberView();
                     break;
 
             }
             return actionToPerform;
         }
 
-        public int getIdOfMember()
+        public int getIndexOfMember()
         {
             return getNumberInput("Type id (#) of member");
         }

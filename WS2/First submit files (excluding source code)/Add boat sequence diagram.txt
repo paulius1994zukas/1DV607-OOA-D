@@ -1,0 +1,22 @@
+title Add boat
+
+Program->+Controller: start()
+Controller->+MemberRegistry: getMembers()
+MemberRegistry->-Controller: members
+Controller->View: showCompactList(members)
+Controller->+View: getNextActionFromListView()
+View->-Controller: actionToPerform.ShowMember
+Controller->+View: getIndexOfMember()
+View->-Controller: memberIndex
+Controller->+MemberRegistry: getMember(id)
+MemberRegistry->-Controller: memberX
+Controller->View: showMember(memberX)
+Controller->+View: getNextActionFromMemberView()
+View->-Controller: actionToPerform.addBoat
+Controller->+View: getBoatType() & getBoatLength()
+View->-Controller: boatType, boatLength
+Controller->+Member: addBoat(boatType, boatLength)
+Member->*-Boat: create(boatType, boatLength)
+Controller->View: showMember(memberX)
+Controller->+View: getNextActionFromMemberView()
+View->-Controller: actionToPerform.Quit
