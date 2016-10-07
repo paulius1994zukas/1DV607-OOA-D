@@ -12,33 +12,33 @@ namespace BoatClubRegistry
             Console.WriteLine("Welcome to your boat club registry");
         }
 
-        public ConsoleAction getNextActionFromListView()
+        public ActionType getNextActionFromListView()
         {
             Console.WriteLine("\nOptions: show [v]erbose list | show [c]ompact list | [a]dd member | view [m]ember | [s]ave | [l]oad | [q]uit");
             var input = Console.ReadKey();
-            ConsoleAction actionToPerform;
+            ActionType actionToPerform;
             switch (input.Key)
             {
                 case ConsoleKey.V:
-                    actionToPerform = ConsoleAction.ViewVerboseList;
+                    actionToPerform = ActionType.ViewVerboseList;
                     break;
                 case ConsoleKey.C:
-                    actionToPerform = ConsoleAction.ViewCompactList;
+                    actionToPerform = ActionType.ViewCompactList;
                     break;
                 case ConsoleKey.A:
-                    actionToPerform = ConsoleAction.AddMember;
+                    actionToPerform = ActionType.AddMember;
                     break;
                 case ConsoleKey.M:
-                    actionToPerform = ConsoleAction.ViewMember;
+                    actionToPerform = ActionType.ViewMember;
                     break;
                 case ConsoleKey.S:
-                    actionToPerform = ConsoleAction.SaveToFile;
+                    actionToPerform = ActionType.SaveToFile;
                     break;
                 case ConsoleKey.L:
-                    actionToPerform = ConsoleAction.LoadFromFile;
+                    actionToPerform = ActionType.LoadFromFile;
                     break;
                 case ConsoleKey.Q:
-                    actionToPerform = ConsoleAction.Quit;
+                    actionToPerform = ActionType.Quit;
                     break;
                 default:
                     Console.WriteLine("Not a valid action. Type the characater in the bracket corresponding to the action.");
@@ -49,40 +49,40 @@ namespace BoatClubRegistry
             return actionToPerform;
         }
 
-        public ConsoleAction getNextActionFromMemberView()
+        public ActionType getNextActionFromMemberView()
         {
             Console.WriteLine("\nOptions:\n show [v]erbose list | show [c]ompact list | [r]emove member | [e]dit member | [s]ave to file | [q]uit");
             Console.WriteLine("[a]dd boat | edit [b]oat | remove b[o]at");
             var input = Console.ReadKey();
-            ConsoleAction actionToPerform;
+            ActionType actionToPerform;
             switch (input.Key)
             {
                 case ConsoleKey.V:
-                    actionToPerform = ConsoleAction.ViewVerboseList;
+                    actionToPerform = ActionType.ViewVerboseList;
                     break;
                 case ConsoleKey.C:
-                    actionToPerform = ConsoleAction.ViewCompactList;
+                    actionToPerform = ActionType.ViewCompactList;
                     break;
                 case ConsoleKey.R:
-                    actionToPerform = ConsoleAction.RemoveMember;
+                    actionToPerform = ActionType.RemoveMember;
                     break;
                 case ConsoleKey.E:
-                    actionToPerform = ConsoleAction.EditMember;
+                    actionToPerform = ActionType.EditMember;
                     break;
                 case ConsoleKey.A:
-                    actionToPerform = ConsoleAction.AddBoat;
+                    actionToPerform = ActionType.AddBoat;
                     break;
                 case ConsoleKey.B:
-                    actionToPerform = ConsoleAction.EditBoat;
+                    actionToPerform = ActionType.EditBoat;
                     break;
                 case ConsoleKey.O:
-                    actionToPerform = ConsoleAction.RemoveBoat;
+                    actionToPerform = ActionType.RemoveBoat;
                     break;
                 case ConsoleKey.S:
-                    actionToPerform = ConsoleAction.SaveToFile;
+                    actionToPerform = ActionType.SaveToFile;
                     break;
                 case ConsoleKey.Q:
-                    actionToPerform = ConsoleAction.Quit;
+                    actionToPerform = ActionType.Quit;
                     break;
                 default:
                     Console.WriteLine("\nNot a valid action. Type the characater in the bracket corresponding to the action.");

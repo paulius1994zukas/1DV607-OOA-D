@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BoatClubRegistry
 {
-    public enum ConsoleAction
+    public enum ActionType
     {
         Quit,
         SaveToFile,

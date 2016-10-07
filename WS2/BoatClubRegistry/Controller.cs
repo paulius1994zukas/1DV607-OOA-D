@@ -21,39 +21,39 @@ namespace BoatClubRegistry
         public void start()
         {
             _consoleView.welcomeMessage();
-            ConsoleAction actionToPerform = ConsoleAction.ViewCompactList;
+            ActionType actionToPerform = ActionType.ViewCompactList;
             
             do
             {
                 switch (actionToPerform)
                 {
-                    case ConsoleAction.SaveToFile:
+                    case ActionType.SaveToFile:
                         _memberRegistry.saveToFile(_consoleView.getPathToFile());
                         nullifyFocusedMember();
                         actionToPerform = _consoleView.getNextActionFromListView();
                         break;
-                    case ConsoleAction.LoadFromFile:
+                    case ActionType.LoadFromFile:
                         _memberRegistry.loadFromFile(_consoleView.getPathToFile());
                         _consoleView.showCompactList(_memberRegistry.getMembers());
                         nullifyFocusedMember();
                         actionToPerform = _consoleView.getNextActionFromListView();
                         break;
-                    case ConsoleAction.ViewCompactList:
+                    case ActionType.ViewCompactList:
                         _consoleView.showCompactList(_memberRegistry.getMembers());
                         nullifyFocusedMember();
                         actionToPerform = _consoleView.getNextActionFromListView();
                         break;
-                    case ConsoleAction.ViewVerboseList:
+                    case ActionType.ViewVerboseList:
                         _consoleView.showVerboseList(_memberRegistry.getMembers());
                         actionToPerform = _consoleView.getNextActionFromListView();
                         break;
-                    case ConsoleAction.ViewMember:
+                    case ActionType.ViewMember:
                         int id = _consoleView.getIndexOfMember();
                         _memberInFocus = _memberRegistry.getMember(id);
                         _consoleView.showMember(_memberInFocus, id);
                         actionToPerform = _consoleView.getNextActionFromMemberView();
                         break;
-                    case ConsoleAction.AddMember:
+                    case ActionType.AddMember:
                         string name = _consoleView.getName();
                         string pid = _consoleView.getPersonIdNumber();
                         Member newMember = _memberRegistry.addMember(name, pid);
@@ -61,7 +61,7 @@ namespace BoatClubRegistry
                         _consoleView.showMember(newMember, _memberRegistry.getMembers().Count - 1);
                         actionToPerform = _consoleView.getNextActionFromMemberView();
                         break;
-                    case ConsoleAction.EditMember:
+                    case ActionType.EditMember:
                         setFocusedMember();
 
                         _memberInFocus.Name = _consoleView.getName();
@@ -70,14 +70,14 @@ namespace BoatClubRegistry
                         _consoleView.showMember(_memberInFocus, (int)_indexOfFocusedMember);
                         actionToPerform = _consoleView.getNextActionFromMemberView();
                         break;
-                    case ConsoleAction.RemoveMember:
+                    case ActionType.RemoveMember:
                         setFocusedMember();
 
                         _memberRegistry.removeMember(_memberInFocus);
                         nullifyFocusedMember();
-                        actionToPerform = ConsoleAction.ViewCompactList;
+                        actionToPerform = ActionType.ViewCompactList;
                         break;
-                    case ConsoleAction.AddBoat:
+                    case ActionType.AddBoat:
                         setFocusedMember();
 
                         _memberInFocus.addBoat(_consoleView.getBoatType(), _consoleView.getBoatLength());
@@ -85,7 +85,7 @@ namespace BoatClubRegistry
                         _consoleView.showMember(_memberInFocus, (int)_indexOfFocusedMember);
                         actionToPerform = _consoleView.getNextActionFromMemberView();
                         break;
-                    case ConsoleAction.EditBoat:
+                    case ActionType.EditBoat:
                         setFocusedMember();
 
                         _memberInFocus.editBoat(_consoleView.getBoatId(), _consoleView.getBoatType(), _consoleView.getBoatLength());
@@ -93,13 +93,13 @@ namespace BoatClubRegistry
                         _consoleView.showMember(_memberInFocus, (int)_indexOfFocusedMember);
                         actionToPerform = _consoleView.getNextActionFromMemberView();
                         break;
-                    case ConsoleAction.RemoveBoat:
+                    case ActionType.RemoveBoat:
                         setFocusedMember();
 
                         _memberInFocus.removeBoat(_consoleView.getBoatId());
                         break;
                 }
-            } while (actionToPerform != ConsoleAction.Quit);
+            } while (actionToPerform != ActionType.Quit);
         }
         private void setFocusedMember()
         {
