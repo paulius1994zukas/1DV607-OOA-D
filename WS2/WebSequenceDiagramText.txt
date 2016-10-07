@@ -1,0 +1,16 @@
+title Add boat
+
+Program->Controller: start()
+Controller->+MemberRegistry: getMembers()
+MemberRegistry-->-Controller: return members[]
+Controller->View: showCompactList(members)
+Controller->+View: listMenu()
+View-->-Controller: return action.showMember
+Controller->+View: getIdOfMember()
+View-->-Controller: return id
+Controller->+MemberRegistry: getMember(id)
+MemberRegistry-->-Controller: return Member
+Controller->View: showMember()
+Controller->+View: memberMenu()
+View-->-Controller: return action.AddBoat
+Controller->+View
