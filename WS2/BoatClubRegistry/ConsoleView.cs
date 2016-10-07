@@ -110,7 +110,46 @@ namespace BoatClubRegistry
 
         public string getPersonIdNumber()
         {
-            return getStringInput("New person id number");
+            return getStringInput("New person id number (10 digits)");
+        }
+
+        public BoatType getBoatType()
+        {
+            Console.WriteLine("\nChoose type of boat:");
+            Console.WriteLine("[S]ailboat | [M]otorsailer | [C]anoe | [O]ther");
+            var input = Console.ReadKey();
+            BoatType type;
+            switch (input.Key)
+            {
+                case ConsoleKey.S:
+                    type = BoatType.Sailboat;
+                    break;
+                case ConsoleKey.M:
+                    type = BoatType.Motorsailer;
+                    break;
+                case ConsoleKey.C:
+                    type = BoatType.Canoe;
+                    break;
+                case ConsoleKey.O:
+                    type = BoatType.Other;
+                    break;
+                default:
+                    Console.WriteLine("\nNot a valid boat type. Type the characater in the bracket corresponding to the action.");
+                    type = getBoatType();
+                    break;
+
+            }
+            return type;
+        }
+
+        public int getBoatLength()
+        {
+            return getNumberInput("Type boat length");
+        }
+
+        public int getBoatId()
+        {
+            return getNumberInput("Type boat id (#)");
         }
 
         public int getNumberInput(string inputHint)
@@ -162,9 +201,11 @@ namespace BoatClubRegistry
             Console.WriteLine($"Member Id: {member.MemberId, -10} PersonId: {member.PersonIdNumber}");
             Console.WriteLine($"Boats    : {member.Boats.Count}");
 
-            foreach (Boat boat in member.Boats)
+            List<Boat> boats = member.Boats;
+
+            for (int i = 0; i < boats.Count; i++)
             {
-                Console.WriteLine($"   Type: {boat.BoatType,-12} Length: {boat.Length}");
+                Console.WriteLine($"#: {i, -2}   Type: {boats[i].BoatType,-12} Length: {boats[i].Length}");
             }
         }
     }

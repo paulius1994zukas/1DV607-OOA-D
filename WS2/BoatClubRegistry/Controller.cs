@@ -29,14 +29,18 @@ namespace BoatClubRegistry
                 {
                     case ConsoleAction.SaveToFile:
                         _mRegistry.saveToFile(_cView.getPathToFile());
+                        nullifyFocusedMember();
                         actionToPerform = _cView.listMenu();
                         break;
                     case ConsoleAction.LoadFromFile:
                         _mRegistry.loadFromFile(_cView.getPathToFile());
+                        _cView.showCompactList(_mRegistry.getMembers());
+                        nullifyFocusedMember();
                         actionToPerform = _cView.listMenu();
                         break;
                     case ConsoleAction.ViewCompactList:
                         _cView.showCompactList(_mRegistry.getMembers());
+                        nullifyFocusedMember();
                         actionToPerform = _cView.listMenu();
                         break;
                     case ConsoleAction.ViewVerboseList:
@@ -68,11 +72,31 @@ namespace BoatClubRegistry
                         break;
                     case ConsoleAction.RemoveMember:
                         setFocusedMember();
+
                         _mRegistry.removeMember(_memberInFocus);
+                        nullifyFocusedMember();
                         actionToPerform = ConsoleAction.ViewCompactList;
                         break;
                     case ConsoleAction.AddBoat:
                         setFocusedMember();
+
+                        _memberInFocus.addBoat(_cView.getBoatType(), _cView.getBoatLength());
+
+                        _cView.showMember(_memberInFocus, (int)_indexOfFocusedMember);
+                        actionToPerform = _cView.memberMenu();
+                        break;
+                    case ConsoleAction.EditBoat:
+                        setFocusedMember();
+
+                        _memberInFocus.editBoat(_cView.getBoatId(), _cView.getBoatType(), _cView.getBoatLength());
+
+                        _cView.showMember(_memberInFocus, (int)_indexOfFocusedMember);
+                        actionToPerform = _cView.memberMenu();
+                        break;
+                    case ConsoleAction.RemoveBoat:
+                        setFocusedMember();
+
+                        _memberInFocus.removeBoat(_cView.getBoatId());
                         break;
                 }
             } while (actionToPerform != ConsoleAction.Quit);
@@ -88,6 +112,12 @@ namespace BoatClubRegistry
             {
                 _indexOfFocusedMember = _mRegistry.getIndexOfMember(_memberInFocus);
             }
+        }
+
+        private void nullifyFocusedMember()
+        {
+            _indexOfFocusedMember = null;
+            _memberInFocus = null;
         }
     }
 }
