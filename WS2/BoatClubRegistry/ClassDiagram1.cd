@@ -55,7 +55,7 @@
       <FileName>BoatType.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="BoatClubRegistry.ConsoleAction" Collapsed="true">
+  <Enum Name="BoatClubRegistry.ActionType" Collapsed="true">
     <Position X="16" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEQACAAgAAAAgAAAAAEAAAAAAQAgAAAAAAAgAAAAEQA=</HashCode>
