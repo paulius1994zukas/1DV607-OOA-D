@@ -22,7 +22,7 @@ It's missing dependencies so it will be harder for a new coder to understand whi
 * Low representational gap between domain model and design which is good. However Member inheriting from Boat and MemberRegistry inheriting from Member seems unnecessary. Could not find out why this was done.
 * Consider using memberRegistry as the creator of new members instead of the controller, both alternatives could be in line with GRASP pattern "controller" but as Larman states in the book "If more than one option applies, usually prefer a class B which aggreagates or contains class A". [1, Chapter 17, Section 10]
 
-#Executable:
+#Runnable version:
 Could not run application. 
 When running YachtClub.application it says the application is missing required files.
 When trying to compile I get error:
@@ -30,7 +30,7 @@ https://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k(MSBuil
 
 #Conclusion:
 Very good implementation and design.
-To pass grade 2: The unnecessary inheritance and dead code needs to be cleaned up, and dependencies should be added to the class diagram.
+To pass grade 2: The unnecessary inheritance and dead code needs to be cleaned up, dependencies should be added to the class diagram and a functioning release should be provided.
 
 #References:
 1. Larman C., Applying UML and Patterns 3rd Ed, 2005, ISBN: 0131489062
