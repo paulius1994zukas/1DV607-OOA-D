@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BoatClubRegistry.Model;
 
-namespace BoatClubRegistry
+namespace BoatClubRegistry.View
 {
     public class ConsoleView
     {

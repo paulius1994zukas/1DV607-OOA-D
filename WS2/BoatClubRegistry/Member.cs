@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BoatClubRegistry
+namespace BoatClubRegistry.Model
 {
     public class Member
     {
         private string _name;
         private string _personIdNumber;
         private int _memberId;
-        private List<BoatClubRegistry.Boat> _boats;
+        private List<Boat> _boats;
 
         public Member(string name, string personIdNumber, int memberId)
         {

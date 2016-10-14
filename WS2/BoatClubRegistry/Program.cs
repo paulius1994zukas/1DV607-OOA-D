@@ -2,6 +2,9 @@
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BoatClubRegistry.Model;
+using BoatClubRegistry.View;
+using BoatClubRegistry.Controller;
 
 namespace BoatClubRegistry
 {
@@ -11,7 +14,7 @@ namespace BoatClubRegistry
         {
             MemberRegistry model = new MemberRegistry();
             ConsoleView view = new ConsoleView();
-            Controller c = new Controller(model, view);
+            ConsoleController c = new ConsoleController(model, view);
             c.start();
         }
     }

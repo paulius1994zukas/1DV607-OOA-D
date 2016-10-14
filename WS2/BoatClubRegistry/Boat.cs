@@ -3,7 +3,7 @@
 using System.Linq;
 using System.Text;
 
-namespace BoatClubRegistry
+namespace BoatClubRegistry.Model
 {
     public class Boat
     {

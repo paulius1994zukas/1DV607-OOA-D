@@ -1,12 +1,12 @@
 Suggested by Peer reviews:
-Put classes in different namespaces (model, view, controller)
-Go thrugh code and see if any comments are needed.
+Put classes in different namespaces (model, view, controller) -Done
+Go thrugh code and see if any comments are needed. -Done, went through code but instead of adding comment, I refactored the code instead.
 Create sequence diagram that shows output list use case.
-Edit class diagram and sequance diagrams to show new namespaces.
+Edit class diagram and sequence diagrams to show new namespaces.
 See if theres anything I can do regarding the boat part of the sequence diagram.
 Make add boat and show list a sub diagram of general flow diagram
 Check if Controller really need to be dependant on Member?
-Add some data and save to file. Which is provided and add instructions for how to use it in readme.
+Add some data and save to file. Which is provided and add instructions for how to use it in readme. -Done
 
 Added by me:
 Make sure app doesnt crash if user input wrong error or file cant be saved. -Done by adding a try catch in the controller.
