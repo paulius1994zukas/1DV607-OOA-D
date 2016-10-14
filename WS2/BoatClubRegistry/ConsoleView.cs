@@ -208,5 +208,10 @@ namespace BoatClubRegistry
                 Console.WriteLine($"#: {i, -2}   Type: {boats[i].BoatType,-12} Length: {boats[i].Length}");
             }
         }
+
+        public void showErrorMessage(Exception e)
+        {
+            Console.WriteLine("Message: {0}", e.Message);
+        }
     }
 }

@@ -25,79 +25,86 @@ namespace BoatClubRegistry
             
             do
             {
-                switch (actionToPerform)
+                try
                 {
-                    case ActionType.SaveToFile:
-                        _memberRegistry.saveToFile(_consoleView.getPathToFile());
-                        nullifyFocusedMember();
-                        actionToPerform = _consoleView.getNextActionFromListView();
-                        break;
-                    case ActionType.LoadFromFile:
-                        _memberRegistry.loadFromFile(_consoleView.getPathToFile());
-                        _consoleView.showCompactList(_memberRegistry.getMembers());
-                        nullifyFocusedMember();
-                        actionToPerform = _consoleView.getNextActionFromListView();
-                        break;
-                    case ActionType.ViewCompactList:
-                        _consoleView.showCompactList(_memberRegistry.getMembers());
-                        nullifyFocusedMember();
-                        actionToPerform = _consoleView.getNextActionFromListView();
-                        break;
-                    case ActionType.ViewVerboseList:
-                        _consoleView.showVerboseList(_memberRegistry.getMembers());
-                        actionToPerform = _consoleView.getNextActionFromListView();
-                        break;
-                    case ActionType.ViewMember:
-                        int id = _consoleView.getIndexOfMember();
-                        _memberInFocus = _memberRegistry.getMember(id);
-                        _consoleView.showMember(_memberInFocus, id);
-                        actionToPerform = _consoleView.getNextActionFromMemberView();
-                        break;
-                    case ActionType.AddMember:
-                        string name = _consoleView.getName();
-                        string pid = _consoleView.getPersonIdNumber();
-                        Member newMember = _memberRegistry.addMember(name, pid);
-                        _memberInFocus = newMember;
-                        _consoleView.showMember(newMember, _memberRegistry.getMembers().Count - 1);
-                        actionToPerform = _consoleView.getNextActionFromMemberView();
-                        break;
-                    case ActionType.EditMember:
-                        setFocusedMember();
+                    switch (actionToPerform)
+                    {
+                        case ActionType.SaveToFile:
+                            _memberRegistry.saveToFile(_consoleView.getPathToFile());
+                            nullifyFocusedMember();
+                            actionToPerform = _consoleView.getNextActionFromListView();
+                            break;
+                        case ActionType.LoadFromFile:
+                            _memberRegistry.loadFromFile(_consoleView.getPathToFile());
+                            _consoleView.showCompactList(_memberRegistry.getMembers());
+                            nullifyFocusedMember();
+                            actionToPerform = _consoleView.getNextActionFromListView();
+                            break;
+                        case ActionType.ViewCompactList:
+                            _consoleView.showCompactList(_memberRegistry.getMembers());
+                            nullifyFocusedMember();
+                            actionToPerform = _consoleView.getNextActionFromListView();
+                            break;
+                        case ActionType.ViewVerboseList:
+                            _consoleView.showVerboseList(_memberRegistry.getMembers());
+                            actionToPerform = _consoleView.getNextActionFromListView();
+                            break;
+                        case ActionType.ViewMember:
+                            int id = _consoleView.getIndexOfMember();
+                            _memberInFocus = _memberRegistry.getMember(id);
+                            _consoleView.showMember(_memberInFocus, id);
+                            actionToPerform = _consoleView.getNextActionFromMemberView();
+                            break;
+                        case ActionType.AddMember:
+                            string name = _consoleView.getName();
+                            string pid = _consoleView.getPersonIdNumber();
+                            Member newMember = _memberRegistry.addMember(name, pid);
+                            _memberInFocus = newMember;
+                            _consoleView.showMember(newMember, _memberRegistry.getMembers().Count - 1);
+                            actionToPerform = _consoleView.getNextActionFromMemberView();
+                            break;
+                        case ActionType.EditMember:
+                            setFocusedMember();
 
-                        _memberInFocus.Name = _consoleView.getName();
-                        _memberInFocus.PersonIdNumber = _consoleView.getPersonIdNumber();
+                            _memberInFocus.Name = _consoleView.getName();
+                            _memberInFocus.PersonIdNumber = _consoleView.getPersonIdNumber();
 
-                        _consoleView.showMember(_memberInFocus, (int)_indexOfFocusedMember);
-                        actionToPerform = _consoleView.getNextActionFromMemberView();
-                        break;
-                    case ActionType.RemoveMember:
-                        setFocusedMember();
+                            _consoleView.showMember(_memberInFocus, (int)_indexOfFocusedMember);
+                            actionToPerform = _consoleView.getNextActionFromMemberView();
+                            break;
+                        case ActionType.RemoveMember:
+                            setFocusedMember();
 
-                        _memberRegistry.removeMember(_memberInFocus);
-                        nullifyFocusedMember();
-                        actionToPerform = ActionType.ViewCompactList;
-                        break;
-                    case ActionType.AddBoat:
-                        setFocusedMember();
+                            _memberRegistry.removeMember(_memberInFocus);
+                            nullifyFocusedMember();
+                            actionToPerform = ActionType.ViewCompactList;
+                            break;
+                        case ActionType.AddBoat:
+                            setFocusedMember();
 
-                        _memberInFocus.addBoat(_consoleView.getBoatType(), _consoleView.getBoatLength());
+                            _memberInFocus.addBoat(_consoleView.getBoatType(), _consoleView.getBoatLength());
 
-                        _consoleView.showMember(_memberInFocus, (int)_indexOfFocusedMember);
-                        actionToPerform = _consoleView.getNextActionFromMemberView();
-                        break;
-                    case ActionType.EditBoat:
-                        setFocusedMember();
+                            _consoleView.showMember(_memberInFocus, (int)_indexOfFocusedMember);
+                            actionToPerform = _consoleView.getNextActionFromMemberView();
+                            break;
+                        case ActionType.EditBoat:
+                            setFocusedMember();
 
-                        _memberInFocus.editBoat(_consoleView.getBoatId(), _consoleView.getBoatType(), _consoleView.getBoatLength());
+                            _memberInFocus.editBoat(_consoleView.getBoatId(), _consoleView.getBoatType(), _consoleView.getBoatLength());
 
-                        _consoleView.showMember(_memberInFocus, (int)_indexOfFocusedMember);
-                        actionToPerform = _consoleView.getNextActionFromMemberView();
-                        break;
-                    case ActionType.RemoveBoat:
-                        setFocusedMember();
+                            _consoleView.showMember(_memberInFocus, (int)_indexOfFocusedMember);
+                            actionToPerform = _consoleView.getNextActionFromMemberView();
+                            break;
+                        case ActionType.RemoveBoat:
+                            setFocusedMember();
 
-                        _memberInFocus.removeBoat(_consoleView.getBoatId());
-                        break;
+                            _memberInFocus.removeBoat(_consoleView.getBoatId());
+                            break;
+                    }
+                }
+                catch (Exception e)
+                {
+                    _consoleView.showErrorMessage(e);
                 }
             } while (actionToPerform != ActionType.Quit);
         }

@@ -43,7 +43,7 @@ namespace BoatClubRegistry
             {
                 if (value.Length != 10) //TODO: use regexp to check format. http://stackoverflow.com/questions/32624800/swedish-ssn-regular-expression-reject-users-under-a-specific-age
                 {
-                    throw new ArgumentOutOfRangeException(nameof(Name), "Must be 10 digits");
+                    throw new ArgumentOutOfRangeException(nameof(PersonIdNumber), "Must be 10 digits");
                 }
 
                 _personIdNumber = value;
