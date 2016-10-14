@@ -1,0 +1,11 @@
+title Add boat
+
+Controller.ConsoleController->+Model.MemberRegistry: getMember(id)
+Model.MemberRegistry->-Controller.ConsoleController: memberX
+Controller.ConsoleController->View.ConsoleView: showMember(memberX)
+Controller.ConsoleController->+View.ConsoleView: getNextActionFromMemberView.ConsoleView()
+View.ConsoleView->-Controller.ConsoleController: actionToPerform.addBoat
+Controller.ConsoleController->+View.ConsoleView: getBoatType() & getBoatLength()
+View.ConsoleView->-Controller.ConsoleController: boatType, boatLength
+Controller.ConsoleController->+Model.MemberX: addBoat(boatType, boatLength)
+Model.MemberX->*-Model.Boat: create(boatType, boatLength)

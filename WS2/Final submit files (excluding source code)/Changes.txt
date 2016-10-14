@@ -1,11 +1,15 @@
 Suggested by Peer reviews:
 Put classes in different namespaces (model, view, controller) -Done
+
 Go thrugh code and see if any comments are needed. -Done, went through code but instead of adding a comment where I felt it might have been needed, I refactored the code instead.
 Create sequence diagram that shows output list use case.
-Edit class diagram and sequence diagrams to show new namespaces.
-See if theres anything I can do regarding the boat part of the sequence diagram.
-Make add boat and show list a sub diagram of general flow diagram
-Check if Controller really need to be dependant on Member?
+
+Edit class diagram and sequence diagrams to show new namespaces. -Done.
+
+Make add boat and show list a sub diagram of general flow diagram -Done but wont add a "super" diagram as websequencediagram doesnt support it.
+
+Check if Controller really need to be dependant on Member? -Done, Yes its needed as Controller uses function add Boat from Member.
+
 Add some data and save to file. Which is provided and add instructions for how to use it in readme. -Done
 
 Added by me:

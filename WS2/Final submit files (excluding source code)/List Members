@@ -1,0 +1,12 @@
+title List Members
+
+Controller.ConsoleController->+View.ConsoleView: getNextActionFromListView.ConsoleView()
+View.ConsoleView->-Controller.ConsoleController: actionToPerform.ShowVerboseList
+Controller.ConsoleController->+Model.MemberRegistry: getMembers()
+Model.MemberRegistry->-Controller.ConsoleController: members
+Controller.ConsoleController->View.ConsoleView: showVerboseList(members)
+loop members:
+	View.ConsoleView->View.ConsoleView: showMember(member, id)
+end
+Controller.ConsoleController->+View.ConsoleView: getNextActionFromListView.ConsoleView()
+View.ConsoleView->-Controller.ConsoleController: actionToPerform.ShowVerboseList
