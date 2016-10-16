@@ -2,7 +2,8 @@ Suggested by Peer reviews:
 Put classes in different namespaces (model, view, controller) -Done
 
 Go thrugh code and see if any comments are needed. -Done, went through code but instead of adding a comment where I felt it might have been needed, I refactored the code instead.
-Create sequence diagram that shows output list use case.
+
+Create sequence diagram that shows output list use case. -Done.
 
 Edit class diagram and sequence diagrams to show new namespaces. -Done.
 
